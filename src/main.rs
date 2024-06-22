@@ -1,11 +1,11 @@
-use chaotic_graphs::category::topology::GrothendieckTopology;
-use chaotic_graphs::graph::chip_firing::ChipFiringNode;
-use chaotic_graphs::graph::graph::Graph;
-use chaotic_graphs::graph::hopfield::HopfieldNode;
-use chaotic_graphs::graph::node::Node;
-use chaotic_graphs::sheaf::conditions::{HopfieldStateCondition, SumCondition};
-use chaotic_graphs::simulation::chip_firing::simulate_chip_firing;
-use chaotic_graphs::simulation::hopfield::simulate_hopfield_network;
+use chaotic_networks::category::topology::GrothendieckTopology;
+use chaotic_networks::graph::chip_firing::ChipFiringNode;
+use chaotic_networks::graph::graph::Graph;
+use chaotic_networks::graph::hopfield::HopfieldNode;
+use chaotic_networks::graph::node::Node;
+use chaotic_networks::sheaf::conditions::{HopfieldStateCondition, SumCondition};
+use chaotic_networks::simulation::chip_firing::simulate_chip_firing;
+use chaotic_networks::simulation::hopfield::simulate_hopfield_network;
 
 fn main() {
     let max_iterations = 1000;
