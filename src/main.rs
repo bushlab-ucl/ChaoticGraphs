@@ -18,8 +18,11 @@ fn main() {
     ];
     let topology = GrothendieckTopology::discrete(nodes);
 
-    let sum_condition = SumCondition { threshold: 10 };
-    let hopfield_condition = HopfieldStateCondition;
+    // -------------------------------------------------------------------------
+    // CHIP FIRING
+    // -------------------------------------------------------------------------
+
+    let sum_condition = SumCondition { threshold: 0 };
 
     // Example of creating and simulating a chip firing graph
     let mut chip_firing_graph = Graph::new(topology.clone());
@@ -49,6 +52,12 @@ fn main() {
     for row in laplacian {
         println!("{:?}", row);
     }
+
+    // -------------------------------------------------------------------------
+    // HOPFIELD NETWORK
+    // -------------------------------------------------------------------------
+
+    let hopfield_condition = HopfieldStateCondition;
 
     // Example of creating and simulating a Hopfield network graph
     let mut hopfield_graph = Graph::new(topology.clone());

@@ -67,7 +67,7 @@ impl<T: Node> Graph<T> {
         matrix
     }
 
-    pub fn check_sheaf_condition(&self) -> bool {
+    pub fn check_global_sheaf_consistency(&self) -> bool {
         if self.sheaf.check_sheaf_condition() {
             // Additional topology checks
             for covering in &self.topology.coverings {

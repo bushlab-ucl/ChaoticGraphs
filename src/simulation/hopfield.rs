@@ -58,8 +58,16 @@ pub fn simulate_hopfield_network(
         }
 
         if !condition.check(&graph.sheaf) {
-            println!("Sheaf condition violated after iteration {}.", iteration);
+            println!(
+                "{}",
+                format!("Sheaf condition violated after iteration {}.", iteration).red()
+            );
             break;
+        } else {
+            println!(
+                "{}",
+                format!("Sheaf condition satisfied after iteration {}.", iteration).green()
+            );
         }
 
         // Check for convergence (optional, depending on your model)
@@ -84,17 +92,17 @@ pub fn simulate_hopfield_network(
         println!("Reached maximum iterations.");
     }
 
-    if graph.check_sheaf_condition() {
-        println!(
-            "{}",
-            "Sheaf condition satisfied after chip firing simulation.".green()
-        );
-    } else {
-        println!(
-            "{}",
-            "Sheaf condition violated after chip firing simulation.".red()
-        );
-    }
+    // if graph.check_global_sheaf_consistency() {
+    //     println!(
+    //         "{}",
+    //         "Sheaf condition satisfied after chip firing simulation.".green()
+    //     );
+    // } else {
+    //     println!(
+    //         "{}",
+    //         "Sheaf condition violated after chip firing simulation.".red()
+    //     );
+    // }
 }
 
 fn update_hopfield_node_state(sum: f64) -> i32 {

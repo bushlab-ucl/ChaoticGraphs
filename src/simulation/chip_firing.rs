@@ -53,7 +53,10 @@ pub fn simulate_chip_firing(
         }
 
         if !condition.check(&graph.sheaf) {
-            println!("Sheaf condition violated after iteration {}.", iteration);
+            println!(
+                "{}",
+                format!("Sheaf condition violated after iteration {}.", iteration).red()
+            );
             break;
         }
     }
@@ -62,15 +65,15 @@ pub fn simulate_chip_firing(
         println!("Reached maximum iterations.");
     }
 
-    if graph.check_sheaf_condition() {
-        println!(
-            "{}",
-            "Sheaf condition satisfied after chip firing simulation.".green()
-        );
-    } else {
-        println!(
-            "{}",
-            "Sheaf condition violated after chip firing simulation.".red()
-        );
-    }
+    // if graph.check_global_sheaf_consistency() {
+    //     println!(
+    //         "{}",
+    //         "Global Sheaf condition satisfied after chip firing simulation.".green()
+    //     );
+    // } else {
+    //     println!(
+    //         "{}",
+    //         "Sheaf condition violated after chip firing simulation.".red()
+    //     );
+    // }
 }

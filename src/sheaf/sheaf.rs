@@ -1,5 +1,5 @@
-use crate::sheaf::presheaf::Presheaf;
 use crate::category::topology::GrothendieckTopology;
+use crate::sheaf::presheaf::Presheaf;
 
 pub struct Sheaf {
     pub presheaf: Presheaf,
