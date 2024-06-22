@@ -1,5 +1,6 @@
 use crate::category::topology::GrothendieckTopology;
 use crate::sheaf::presheaf::Presheaf;
+use std::fmt;
 
 pub struct Sheaf {
     pub presheaf: Presheaf,
@@ -45,5 +46,15 @@ impl Sheaf {
         }
         let first = &data[0];
         data.iter().all(|d| d == first)
+    }
+}
+
+impl fmt::Display for Sheaf {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "Sheaf:\n Presheaf: {:?}\n Topology:\n{}",
+            self.presheaf, self.topology
+        )
     }
 }

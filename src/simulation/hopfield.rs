@@ -92,6 +92,8 @@ pub fn simulate_hopfield_network(
         println!("Reached maximum iterations.");
     }
 
+    println!("{}", graph);
+
     // if graph.check_global_sheaf_consistency() {
     //     println!(
     //         "{}",

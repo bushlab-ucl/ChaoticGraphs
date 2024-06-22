@@ -96,12 +96,19 @@ impl GrothendieckTopology {
     }
 }
 
-impl fmt::Debug for GrothendieckTopology {
+impl fmt::Display for GrothendieckTopology {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(
-            f,
-            "GrothendieckTopology {{ coverings: {:?} }}",
-            self.coverings
-        )
+        write!(f, "GrothendieckTopology:\n Coverings:\n")?;
+        for covering in &self.coverings {
+            write!(f, "  Covering:\n")?;
+            for morphism in &covering.covers {
+                write!(
+                    f,
+                    "    {} -> {} (isomorphism: {})\n",
+                    morphism.source, morphism.target, morphism.is_isomorphism
+                )?;
+            }
+        }
+        Ok(())
     }
 }

@@ -2,6 +2,7 @@ use crate::category::category::Category;
 use crate::category::topology::GrothendieckTopology;
 use crate::graph::node::Node;
 use crate::sheaf::sheaf::Sheaf;
+use std::fmt;
 
 pub struct Graph<T: Node> {
     pub nodes: Vec<T>,
@@ -81,5 +82,15 @@ impl<T: Node> Graph<T> {
         } else {
             false
         }
+    }
+}
+
+impl<T: Node + std::fmt::Debug> fmt::Display for Graph<T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "Graph:\n Nodes: {:?}\n Category:\n{}\n Topology:\n{}\n Sheaf:\n{}",
+            self.nodes, self.category, self.topology, self.sheaf
+        )
     }
 }

@@ -1,5 +1,6 @@
 use crate::graph::node::Node;
 
+#[derive(Debug)]
 pub struct ChipFiringNode {
     pub id: usize,
     pub name: String,

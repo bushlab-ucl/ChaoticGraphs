@@ -1,5 +1,6 @@
 use std::collections::HashMap;
 
+#[derive(Debug)]
 pub struct Presheaf {
     pub values: HashMap<String, Vec<String>>,
 }

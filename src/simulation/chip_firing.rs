@@ -65,6 +65,8 @@ pub fn simulate_chip_firing(
         println!("Reached maximum iterations.");
     }
 
+    println!("{}", graph);
+
     // if graph.check_global_sheaf_consistency() {
     //     println!(
     //         "{}",
