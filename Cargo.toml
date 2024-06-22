@@ -1,6 +1,8 @@
 [package]
 name = "chaotic_networks"
-summary = "Discrete Graphs for Indiscrete Researchers"
+authors = ["Daniel Humphries <d.humphries@ucl.ac.uk>"]
+description = "Discrete Graphs for Indiscrete Researchers - Networks with Grothendieck Topology."
+license = "CC-BY-NC-4.0"
 version = "0.1.0"
 edition = "2021"
 
