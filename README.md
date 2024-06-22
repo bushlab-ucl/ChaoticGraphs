@@ -9,7 +9,7 @@
 - Integration with `sheaf theory` for consistency and advanced analysis.
 - Flexible simulation framework for `Hopfield networks` and `chip-firing systems`.
 - `Rust` implementation (potential for future `Python` bindings).
-- Provides Opportunity for a wide range of fun `wordplay`.
+- Provides Opportunity for discrete/indiscrete/chaotic `wordplay`.
 
 
 ## Libraries
