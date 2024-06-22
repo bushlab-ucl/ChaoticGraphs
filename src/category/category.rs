@@ -3,7 +3,7 @@ pub struct Category {
     pub morphisms: Vec<Morphism>,
 }
 
-#[derive(PartialEq, Clone)]
+#[derive(PartialEq, Clone, Debug)]
 pub struct Morphism {
     pub source: String,
     pub target: String,

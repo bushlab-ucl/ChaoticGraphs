@@ -3,6 +3,7 @@ use chaotic_graphs::graph::chip_firing::ChipFiringNode;
 use chaotic_graphs::graph::graph::Graph;
 use chaotic_graphs::graph::hopfield::HopfieldNode;
 use chaotic_graphs::graph::node::Node;
+use chaotic_graphs::sheaf::conditions::{HopfieldStateCondition, SumCondition};
 use chaotic_graphs::simulation::chip_firing::simulate_chip_firing;
 use chaotic_graphs::simulation::hopfield::simulate_hopfield_network;
 
@@ -15,7 +16,10 @@ fn main() {
         "Node1".to_string(),
         "Node2".to_string(),
     ];
-    let topology = GrothendieckTopology::indiscrete(nodes);
+    let topology = GrothendieckTopology::discrete(nodes);
+
+    let sum_condition = SumCondition { threshold: 10 };
+    let hopfield_condition = HopfieldStateCondition;
 
     // Example of creating and simulating a chip firing graph
     let mut chip_firing_graph = Graph::new(topology.clone());
@@ -29,7 +33,7 @@ fn main() {
     println!("----");
     println!("Simulating chip firing graph.");
     println!("----");
-    simulate_chip_firing(&mut chip_firing_graph, max_iterations);
+    simulate_chip_firing(&mut chip_firing_graph, max_iterations, &sum_condition);
     for node in &chip_firing_graph.nodes {
         println!(
             "Node {} has {} chips and info: {}",
@@ -79,7 +83,7 @@ fn main() {
     println!("----");
     println!("Simulating Hopfield network.");
     println!("----");
-    simulate_hopfield_network(&mut hopfield_graph, max_iterations);
+    simulate_hopfield_network(&mut hopfield_graph, max_iterations, &hopfield_condition);
     for node in &hopfield_graph.nodes {
         println!(
             "Node {} has state {} and info: {}",

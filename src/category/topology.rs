@@ -1,6 +1,7 @@
 use crate::category::category::Morphism;
+use std::fmt;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Covering {
     pub covers: Vec<Morphism>,
 }
@@ -61,5 +62,46 @@ impl GrothendieckTopology {
             });
         }
         topology
+    }
+
+    // Specific method to initialize a discrete topology
+    pub fn discrete(objects: Vec<String>) -> Self {
+        let mut topology = GrothendieckTopology::new();
+        for object in &objects {
+            let identity_morphism = Morphism {
+                source: object.clone(),
+                target: object.clone(),
+                is_isomorphism: true,
+            };
+            topology.add_covering(Covering {
+                covers: vec![identity_morphism],
+            });
+        }
+
+        // In a discrete topology, every morphism between any two objects is considered
+        for source in &objects {
+            for target in &objects {
+                let morphism = Morphism {
+                    source: source.clone(),
+                    target: target.clone(),
+                    is_isomorphism: true,
+                };
+                topology.add_covering(Covering {
+                    covers: vec![morphism],
+                });
+            }
+        }
+
+        topology
+    }
+}
+
+impl fmt::Debug for GrothendieckTopology {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "GrothendieckTopology {{ coverings: {:?} }}",
+            self.coverings
+        )
     }
 }

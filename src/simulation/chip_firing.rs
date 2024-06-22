@@ -1,14 +1,18 @@
 use crate::graph::chip_firing::ChipFiringNode;
 use crate::graph::graph::Graph;
 use crate::graph::node::Node;
-use crate::utils::conditions::check_sum_condition;
+use crate::sheaf::conditions::SheafCondition;
+use colored::*;
 
-pub fn simulate_chip_firing(graph: &mut Graph<ChipFiringNode>, max_iterations: usize) {
+pub fn simulate_chip_firing(
+    graph: &mut Graph<ChipFiringNode>,
+    max_iterations: usize,
+    condition: &dyn SheafCondition,
+) {
     println!("Starting chip firing simulation...");
     let mut any_fired = true;
     let mut iteration = 0;
     let print_interval = max_iterations / 10;
-    let threshold = 10;
     let verbose = false;
 
     while any_fired && iteration < max_iterations {
@@ -48,8 +52,8 @@ pub fn simulate_chip_firing(graph: &mut Graph<ChipFiringNode>, max_iterations: u
             println!("Iteration: {}", iteration);
         }
 
-        if !check_sum_condition(&graph.sheaf, threshold) {
-            println!("Sum condition violated after iteration {}.", iteration);
+        if !condition.check(&graph.sheaf) {
+            println!("Sheaf condition violated after iteration {}.", iteration);
             break;
         }
     }
@@ -59,8 +63,14 @@ pub fn simulate_chip_firing(graph: &mut Graph<ChipFiringNode>, max_iterations: u
     }
 
     if graph.check_sheaf_condition() {
-        println!("Sheaf condition satisfied after chip firing simulation.");
+        println!(
+            "{}",
+            "Sheaf condition satisfied after chip firing simulation.".green()
+        );
     } else {
-        println!("Sheaf condition violated after chip firing simulation.");
+        println!(
+            "{}",
+            "Sheaf condition violated after chip firing simulation.".red()
+        );
     }
 }
