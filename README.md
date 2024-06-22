@@ -21,9 +21,3 @@
 - `UCL Human Electrophysiology Lab`: https://bushlab-ucl.github.io
 - `Crates.io`: https://crates.io/crates/chaotic-networks
 - `SGA 1972`: [https://stacks.math.columbia.edu/tag/00WY](https://stacks.math.columbia.edu/)
-  
-# Structure and Use of `ChaoticNetworks` in Rust
-
-### Documentation
-This README may be out of date, check out the docs at:
-**Crates.io**: https://crates.io/crates/chaotic-networks
