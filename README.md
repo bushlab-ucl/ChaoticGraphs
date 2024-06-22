@@ -1,2 +1,2 @@
 # DiscreteGraphs
-Chaotic Graphs for Indiscrete Researchers - Discrete Graphs with Indiscrete Topology
+Discrete Graphs for Indiscrete Researchers - Discrete Graphs with Chaotic Topology
