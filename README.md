@@ -1,2 +1,2 @@
 # ChaoticGraphs
-Discrete Graphs for Indiscrete Researchers - Discrete Graphs with Chaotic Topology
+Discrete Graphs for Indiscrete Researchers - Discrete Graphs with Grothendieck Topology
