@@ -12,7 +12,7 @@
 
 
 ## Libraries
-- `src/category` - Defines Category Theoeretic structure and Grothendieck topology.
+- `src/category` - Defines category theoeretic structure and Grothendieck topology.
 - `src/graph` - Contains the graph structures and node implementations.
 - `src/sheaf` - Manages sheaf and presheaf data, along with sheaf conditions.
 - `src/simulation` - Simulation logic for Hopfield networks and chip-firing systems.
