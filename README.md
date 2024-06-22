@@ -1,2 +1,2 @@
 # DiscreteGraphs
-Discrete Graphs for Indiscrete Researchers
+Discrete Graphs for Indiscrete Researchers - Hopfield, Ising, Chip Firing
