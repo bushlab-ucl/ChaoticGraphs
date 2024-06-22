@@ -12,10 +12,10 @@
 
 
 ## Libraries
-- `src/graph` - Contains the core graph structures and node implementations.
+- `src/category` - Defines Category Theoeretic structure and Grothendieck topologies.
+- `src/graph` - Contains the graph structures and node implementations.
 - `src/sheaf` - Manages sheaf and presheaf data, along with sheaf conditions.
 - `src/simulation` - Simulation logic for Hopfield networks and chip-firing systems.
-- `src/category` - Defines Category Theoeretic structure and Grothendieck topologies.
 
 ## Links
 - `UCL Human Electrophysiology Lab`: https://bushlab-ucl.github.io
