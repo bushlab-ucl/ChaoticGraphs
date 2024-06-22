@@ -2,7 +2,7 @@
 
 ## Overview
 
-`ChaoticNetworks` is a Rust package designed for advanced graph modeling and simulations. This library leverages `Grothendieck topologies` and `sheaf theory` to provide a robust framework for analyzing and understanding complex networks such as `Hopfield networks` and `chip-firing models`.
+`ChaoticNetworks` is a Rust package designed for graph modeling and simulations. This library leverages `Grothendieck topologies` and `sheaf theory` to provide a robust framework for analyzing and understanding complex networks such as `Hopfield networks` and `chip-firing models`.
 
 ## Features
 - `Modular design` with a basis in `Category Theory` and `Grothendieck Topology`.
