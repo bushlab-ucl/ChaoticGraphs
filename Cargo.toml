@@ -1,5 +1,5 @@
 [package]
-name = "chaotic_networks"
+name = "divisor_networks"
 authors = ["Daniel Humphries <d.humphries@ucl.ac.uk>"]
 description = "Discrete Graphs for Indiscrete Researchers - Networks with Grothendieck Topology."
 license = "CC-BY-NC-4.0"
